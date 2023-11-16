@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body dir="rtl">
+    <nav class="navbar">
+      <div style="font-size: 30px; font-weight: bold">الشعار</div>
+      <div class="dropdown" id="dropdown">
+        <button class="dropdown-button">القائمة</button>
+        <div class="dropdown-content" id="dropdown-content"></div>
+      </div>
+      <div class="navbar-middle" id="navbar-middle"></div>
+      <div class="navbar-end">
+        <div>
+          <p style="font-size: 20px; font-weight: bold">محمد حسين</p>
+          <p>مقهي هاف مليون</p>
+        </div>
+        <img
+          src="../assets//images/img_avatar.png"
+          alt="Avatar"
+          class="avatar"
+        />
+      </div>
+    </nav>
+    <div class="container">
+      <div class="lists-container">
+        <div class="list-container">
+          <div class="list-header">
+            <div>مسودة</div>
+            <div class="total-number">5</div>
+            <div class="search-container">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+          </div>
+          <div id="list1" class="list">
+            <div class="list-item">Item 1</div>
+          </div>
+        </div>
+        <div class="list-container">
+          <div class="list-header">
+            <div>مسودة</div>
+            <div class="total-number">5</div>
+            <div class="search-container">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+          </div>
+          <div id="list2" class="list">
+            <div class="list-item">Item 2</div>
+          </div>
+        </div>
+        <div class="list-container">
+          <div class="list-header">
+            <div>مسودة</div>
+            <div class="total-number">5</div>
+            <div class="search-container">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+          </div>
+          <div id="list3" class="list">
+            <div class="list-item">Item 3</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+  </body>
+</html>

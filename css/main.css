@@ -75,13 +75,15 @@ select option {
   height: 20px;
   background-color: #ff5e5e;
   color: #fff;
-  font-size: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
   top: 0px;
   left: 0px;
+}
+.notification-number {
+  font-size: 10px;
 }
 a {
   text-decoration: none !important; /* Remove underline */
@@ -317,6 +319,7 @@ button {
   cursor: pointer;
   border-radius: 5px;
   height: 30px;
+  width: 70px !important;
   margin-bottom: 5px;
 }
 

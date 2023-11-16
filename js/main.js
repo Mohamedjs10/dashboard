@@ -2,67 +2,70 @@
 const navbarItems = [
   {
     title: "الرئيسية",
-    url: "https://chat.openai.com/c/95f1abe4-e1c8-4c99-b66e-86be1152c614",
+    url: "../index.html",
     notificationNumber: "5",
   },
   {
     title: "الفاعليات",
-    url: "https://chat.openai.com/c/95f1abe4-e1c8-4c99-b66e-86be1152c614",
+    url: "../html/events.html",
     notificationNumber: "5",
   },
   {
     title: "التصاريح",
-    url: "https://chat.openai.com/c/95f1abe4-e1c8-4c99-b66e-86be1152c614",
+    url: "../html/permits.html",
     notificationNumber: "5",
   },
   {
     title: "دعم الفاعليات",
-    url: "https://chat.openai.com/c/95f1abe4-e1c8-4c99-b66e-86be1152c614",
+    url: "../html/events-support.html",
     notificationNumber: "5",
   },
   {
     title: "المساعدة",
-    url: "https://chat.openai.com/c/95f1abe4-e1c8-4c99-b66e-86be1152c614",
+    url: "../html/help.html",
     notificationNumber: "5",
   },
   {
     title: "الاعدادات",
-    url: "https://chat.openai.com/c/95f1abe4-e1c8-4c99-b66e-86be1152c614",
+    url: "../html/settings.html",
     notificationNumber: "5",
   },
 ];
 
-const navbarItemsContainer = document.getElementById("navbar-middle");
-navbarItems.forEach((item) => {
-  const element = document.createElement("a");
-  element.classList.add("navbar-item");
-  element.href = item.url;
-
-  element.innerHTML = `
+if (document.getElementById("navbar-middle")) {
+  const navbarItemsContainer = document.getElementById("navbar-middle");
+  navbarItems.forEach((item) => {
+    const element = document.createElement("a");
+    element.classList.add("navbar-item");
+    element.href = item.url;
+    element.innerHTML = `
           <p>${item.title}</p>
           <div class="notification">
             <p class="notification-number">${item.notificationNumber}</p>
           </div>
       `;
 
-  navbarItemsContainer.appendChild(element);
-});
+    navbarItemsContainer.appendChild(element);
+  });
+}
 // ---- drop down menu ----
-const dropdownContent = document.getElementById("dropdown-content");
-navbarItems.forEach((item) => {
-  const element = document.createElement("a");
-  element.classList.add("navbar-item");
-  element.href = item.url;
+if (document.getElementById("dropdown-content")) {
+  const dropdownContent = document.getElementById("dropdown-content");
+  navbarItems.forEach((item) => {
+    const element = document.createElement("a");
+    element.classList.add("navbar-item");
+    element.href = item.url;
 
-  element.innerHTML = `
-          <p>${item.title}</p>
-          <div class="notification">
-            <p class="notification-number">${item.notificationNumber}</p>
-          </div>
-      `;
+    element.innerHTML = `
+            <p>${item.title}</p>
+            <div class="notification">
+              <p class="notification-number">${item.notificationNumber}</p>
+            </div>
+        `;
 
-  dropdownContent.appendChild(element);
-});
+    dropdownContent.appendChild(element);
+  });
+}
 
 //* table rows
 const bodyRows = [
@@ -90,11 +93,12 @@ const bodyRows = [
   },
 ];
 
-const tableBodyContainer = document.getElementById("table-body");
-bodyRows.forEach((item) => {
-  const element = document.createElement("tr");
+if (document.getElementById("table-body")) {
+  const tableBodyContainer = document.getElementById("table-body");
+  bodyRows.forEach((item) => {
+    const element = document.createElement("tr");
 
-  element.innerHTML = `
+    element.innerHTML = `
       <td>
           <input type="checkbox" id="checkbox1" name="checkbox1" checked=${
             item.checked
@@ -125,8 +129,9 @@ bodyRows.forEach((item) => {
           </select>
       </td>
   `;
-  tableBodyContainer.appendChild(element);
-});
+    tableBodyContainer.appendChild(element);
+  });
+}
 // **
 const header = [
   "",
@@ -142,13 +147,15 @@ const header = [
 ];
 {
 }
-const headerContainer = document.getElementById("table-header");
-header.forEach((item) => {
-  const element = document.createElement("th");
+if (document.getElementById("table-header")) {
+  const headerContainer = document.getElementById("table-header");
+  header.forEach((item) => {
+    const element = document.createElement("th");
 
-  element.innerHTML = item;
-  headerContainer.appendChild(element);
-});
+    element.innerHTML = item;
+    headerContainer.appendChild(element);
+  });
+}
 
 //* categories
 
@@ -187,19 +194,21 @@ let changeSelected = (id) => {
   }
 };
 
-const categoriesContainer = document.getElementById("categories-container");
+if (document.getElementById("categories-container")) {
+  const categoriesContainer = document.getElementById("categories-container");
+  categories.forEach((item) => {
+    const element = document.createElement("div");
+    element.classList.add(
+      `${chosenCategory === item.id ? "category-chosen" : "category"}`
+    );
 
-categories.forEach((item) => {
-  const element = document.createElement("div");
-  element.classList.add(
-    `${chosenCategory === item.id ? "category-chosen" : "category"}`
-  );
-
-  element.innerHTML = `
+    element.innerHTML = `
       <div id=${item.id} onclick="changeSelected(${item.id})">${item.title}</div>
     `;
-  categoriesContainer.appendChild(element);
-});
+    categoriesContainer.appendChild(element);
+  });
+}
+//***
 document.addEventListener("DOMContentLoaded", (event) => {
   new Sortable(list1, {
     group: "shared",
