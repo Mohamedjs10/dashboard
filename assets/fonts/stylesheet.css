@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'BousniRonde LT Std';
+    src: url('BousniRondeLTStd-Medium.eot');
+    src: local('BousniRonde LT Std Medium'), local('BousniRondeLTStd-Medium'),
+        url('BousniRondeLTStd-Medium.eot?#iefix') format('embedded-opentype'),
+        url('BousniRondeLTStd-Medium.woff2') format('woff2'),
+        url('BousniRondeLTStd-Medium.woff') format('woff'),
+        url('BousniRondeLTStd-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BousniRonde LT Std';
+    src: url('BousniRondeLTStd-Light.eot');
+    src: local('BousniRonde LT Std Light'), local('BousniRondeLTStd-Light'),
+        url('BousniRondeLTStd-Light.eot?#iefix') format('embedded-opentype'),
+        url('BousniRondeLTStd-Light.woff2') format('woff2'),
+        url('BousniRondeLTStd-Light.woff') format('woff'),
+        url('BousniRondeLTStd-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BousniRonde LT Std';
+    src: url('BousniRondeLTStd-Bold.eot');
+    src: local('BousniRonde LT Std Bold'), local('BousniRondeLTStd-Bold'),
+        url('BousniRondeLTStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('BousniRondeLTStd-Bold.woff2') format('woff2'),
+        url('BousniRondeLTStd-Bold.woff') format('woff'),
+        url('BousniRondeLTStd-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,317 @@
+@font-face {
+  font-family: "BousniRondeLTStd"; /* Give your font a name to use in CSS */
+  src: url("../assets/fonts/BousniRondeLTStd-Bold.ttf") format("ttf");
+  font-weight: bold;
+  font-style: bold;
+}
+* {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+body {
+  font-family: "BousniRondeLTStd", sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: #e2e2e2;
+  color: #737373;
+}
+table {
+  background-color: #efefef;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+th,
+td {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+select {
+  background-color: #bfbfbf;
+  border: 1px solid#bfbfbf;
+  border-radius: 3px;
+  color: #fff;
+  width: 100px;
+  height: 20px;
+}
+select option {
+  background-color: #fff; /* Inherit the background color */
+  color: #737373;
+}
+.notification {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: #ff5e5e;
+  color: #fff;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+a {
+  text-decoration: none !important; /* Remove underline */
+  color: inherit; /* Inherit the color from the parent element */
+  /* Additional styles can be added or adjusted as needed */
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #bcbcbc;
+  padding: 10px;
+}
+
+.navbar-end {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.navbar-middle {
+  display: flex;
+  gap: 5px;
+}
+.navbar-item {
+  position: relative;
+  padding: 7px 10px 7px 23px;
+  border-radius: 5px;
+}
+.navbar-item:hover {
+  background-color: #cfd501;
+  cursor: pointer;
+}
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 5px;
+}
+.categories-container {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.category {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.category-chosen {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #899ae1;
+  color: #fff;
+}
+.category:hover {
+  background-color: #899ae1;
+  color: #fff;
+}
+.list {
+  border: 1px solid #ccc;
+  /* padding: 10px; */
+  /* margin-bottom: 10px; */
+  width: 200px;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.list-item {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.lists-container {
+  display: flex;
+  gap: 10px;
+}
+.list-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #efefef;
+  min-height: 400px;
+  padding: 10px;
+}
+.list-header {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.search-container {
+  background-color: #fff;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.total-number {
+  color: #fff;
+  background-color: #ff5e5e;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+/* stepper */
+#stepper-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ddd;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.step.active {
+  background: #000;
+  color: #fff;
+}
+.step-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 10px;
+}
+
+.step-title {
+  margin-top: 5px; /* Spacing between step and title */
+  font-size: 12px; /* Smaller font size for the title */
+  color: #666; /* Grey color for the title text */
+}
+
+.connector {
+  height: 2px;
+  flex: 1;
+  background: #848484;
+  transition: background 0.3s;
+}
+
+.active ~ .connector {
+  background: #000;
+}
+
+/* Existing styles for the stepper ... */
+
+.content {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  display: none; /* Hide by default, will be shown by JS */
+}
+
+#navigation-buttons {
+  margin-top: 20px;
+}
+
+button {
+  font-size: 15px;
+  cursor: pointer;
+}
+#back-button {
+  height: 25px;
+  width: 50px;
+  background-color: #b7b7b7;
+  border: 1px solid #b7b7b7;
+  color: #000;
+  border-radius: 5px;
+}
+#next-button {
+  height: 25px;
+  width: 50px;
+  background-color: #899ae1;
+  border: 1px solid #899ae1;
+  color: #fff;
+  border-radius: 5px;
+}
+#submit-button {
+  height: 25px;
+  width: 50px;
+  background-color: #6fd272;
+  border: 1px solid #6fd272;
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* horizontal stepper */
+
+/* dropdown */
+/* Style the dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Style the dropdown button */
+.dropdown-button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+/* Style the dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  /* display: block; */
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 5px;
+}
+
+/* Style the dropdown links */
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown content when the dropdown button is hovered over */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
