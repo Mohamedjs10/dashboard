@@ -47,7 +47,11 @@ tbody tr {
 }
 
 /* Apply border-radius to the first and last td of the row */
-
+button {
+  border: none;
+  outline: none;
+  width: 50px;
+}
 select {
   background-color: #bfbfbf;
   border: 1px solid#bfbfbf;
@@ -372,4 +376,41 @@ button {
   #dropdown {
     display: inline-block; /* Adjust the height for smaller screens */
   }
+}
+
+.form-container {
+  background-color: #efefef;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.custom-input {
+  width: 150px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #333;
+  border-radius: 5px;
+}
+.custom-input option {
+  background-color: white;
+  color: #333;
+}
+/* Style for the placeholder text */
+.custom-input::placeholder {
+  color: #888; /* Grey placeholder text color */
+}
+.remove {
+  color: #000;
+  background-color: #bfbfbf;
+  border-radius: 5px;
+  margin-right: auto;
+}
+.remove:hover {
+  color: #bfbfbf;
+  background-color: #000;
+  border-radius: 5px;
 }

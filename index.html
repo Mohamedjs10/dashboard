@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -29,7 +30,27 @@
     </nav>
     <div class="container">
       <div class="categories-container" id="categories-container"></div>
-      <form></form>
+      <div class="form-container">
+        <input type="text" class="custom-input" placeholder="رقم الطلب" />
+        <input type="text" class="custom-input" placeholder="اسم الفعالة" />
+        <input type="text" class="custom-input" placeholder="المتحدث" />
+        <input type="text" class="custom-input" placeholder="رقم التصريح" />
+        <select class="custom-input">
+          <option selected disabled>حالة التصريح</option>
+          <option value="option1">فعال</option>
+          <option value="option2">متوقف</option>
+        </select>
+        <select class="custom-input">
+          <option selected disabled>حالة الدعم</option>
+          <option value="option1">فعال</option>
+          <option value="option2">متوقف</option>
+        </select>
+        <button class="category-chosen">بحث</button>
+        <button class="category-chosen">اكسل</button>
+        <button class="remove">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
       <table>
         <thead>
           <tr id="table-header"></tr>
