@@ -185,35 +185,30 @@ const categories = [
 ];
 let chosenCategory = "1";
 let changeSelected = (id) => {
-  // const previousChosen = document.getElementById(chosenCategory);
-  // previousChosen.classList.remove("category-chosen");
-  // previousChosen.classList.add("category");
-  // chosenCategory = id;
-  // const element = document.getElementById(id);
-  // element.classList.remove("category");
-  // element.classList.add("category-chosen");
-  // Select the parent div
-  let parentDiv = document.getElementById("parentDiv");
+  console.log(id);
 
-  // Get all child elements
-  let childElements = parentDiv.children;
+  const unChosen = document.getElementById(chosenCategory);
+  unChosen.classList.remove("category-chosen");
+  unChosen.classList.add("category");
 
-  // Now you can work with the childElements
-  for (let i = 0; i < childElements.length; i++) {
-    console.log(childElements[i].tagName); // This will log the tag name of each child
-  }
+  chosenCategory = id;
+  const chosen = document.getElementById(id);
+  chosen.classList.remove("category");
+  chosen.classList.add("category-chosen");
 };
 
 if (document.getElementById("categories-container")) {
   const categoriesContainer = document.getElementById("categories-container");
   categories.forEach((item) => {
     const element = document.createElement("div");
+    element.setAttribute("id", item.id);
+
     element.classList.add(
       `${chosenCategory === item.id ? "category-chosen" : "category"}`
     );
 
     element.innerHTML = `
-      <div id=${item.id} onclick="changeSelected(${item.id})">${item.title}</div>
+      <div onclick="changeSelected(${item.id})">${item.title}</div>
     `;
     categoriesContainer.appendChild(element);
   });
