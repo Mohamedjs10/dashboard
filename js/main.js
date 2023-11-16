@@ -73,12 +73,12 @@ const bodyRows = [
     speakers: ["Mohamed", "Ali", "sara"],
     start: "12/5/2023",
     end: "12/5/2023",
-    status: "closed",
+    status: "open",
     enroll: "100",
     options: ["option1", "option2", "option3"],
   },
   {
-    checked: true,
+    checked: false,
     number: "123456",
     name: "text",
     speakers: ["Mohamed", "Ali", "sara"],
@@ -91,7 +91,6 @@ const bodyRows = [
 ];
 
 const tableBodyContainer = document.getElementById("table-body");
-
 bodyRows.forEach((item) => {
   const element = document.createElement("tr");
 
@@ -103,12 +102,19 @@ bodyRows.forEach((item) => {
       </td>
       <td>
           <span>${item.number}</span>
-          <span>
-              <i class="fa-solid fa-circle" style="color: #55cb55"></i>
-          </span>
+          ${
+            item.status === "open"
+              ? `<span>
+                <i class="fa-solid fa-circle" style="color: #55cb55"></i>
+              </span>`
+              : ""
+          }
       </td>
       <td>
           <span>${item.name}</span>
+      </td>
+      <td>
+          <span>${item.speakers}</span>
       </td>
       <td>
           <select id="select-container">
@@ -120,6 +126,28 @@ bodyRows.forEach((item) => {
       </td>
   `;
   tableBodyContainer.appendChild(element);
+});
+// **
+const header = [
+  "",
+  `
+    <span>رقم الطلب</span>
+    <span>
+      <i class="fa-solid fa-sort sort"></i>
+    </span>
+  `,
+  "اسم الفاعلية",
+  "المتحدثون",
+  "",
+];
+{
+}
+const headerContainer = document.getElementById("table-header");
+header.forEach((item) => {
+  const element = document.createElement("th");
+
+  element.innerHTML = item;
+  headerContainer.appendChild(element);
 });
 
 //* categories
@@ -261,3 +289,5 @@ function submitForm() {
 
 // Initialize to the first step
 updateStep(currentStep);
+
+//* pagination

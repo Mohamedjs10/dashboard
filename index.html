@@ -9,15 +9,15 @@
   </head>
   <body dir="rtl">
     <nav class="navbar">
-      <div>الشعار</div>
-      <div class="dropdown">
+      <div style="font-size: 30px; font-weight: bold">الشعار</div>
+      <div class="dropdown" id="dropdown">
         <button class="dropdown-button">القائمة</button>
         <div class="dropdown-content" id="dropdown-content"></div>
       </div>
       <div class="navbar-middle" id="navbar-middle"></div>
       <div class="navbar-end">
         <div>
-          <p>محمد حسين</p>
+          <p style="font-size: 20px; font-weight: bold">محمد حسين</p>
           <p>مقهي هاف مليون</p>
         </div>
         <img
@@ -32,19 +32,25 @@
       <form></form>
       <table>
         <thead>
-          <tr>
-            <th>
-              <span>رقم الطلب</span
-              ><span>
-                <i class="fa-solid fa-arrows-up-down"></i>
-              </span>
-            </th>
-            <th>Column 2</th>
-            <th>Column 3</th>
-            <th>Column 4</th>
-          </tr>
+          <tr id="table-header"></tr>
         </thead>
         <tbody id="table-body"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5" id="pagination">
+              <!-- Pagination buttons will be populated here -->
+              <nav aria-label="Page navigation">
+                <ul class="pagination">
+                  <li><a href="#">&laquo;</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">&raquo;</a></li>
+                </ul>
+              </nav>
+            </td>
+          </tr>
+        </tfoot>
       </table>
       <div class="lists-container">
         <div class="list-container">

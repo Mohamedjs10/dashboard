@@ -9,6 +9,7 @@
   margin: 0;
   text-align: center;
   vertical-align: middle;
+  font-size: 15px;
 }
 
 body {
@@ -20,9 +21,14 @@ body {
 }
 table {
   background-color: #efefef;
-  margin: auto;
   padding: 10px;
   border-radius: 5px;
+  border-collapse: separate; /* This is necessary to apply border-spacing */
+  border-spacing: 0 10px; /* 0 horizontal and 10px vertical spacing */
+}
+
+.sort {
+  cursor: pointer;
 }
 th,
 td {
@@ -30,7 +36,18 @@ td {
   padding-bottom: 10px;
   padding-left: 5px;
   padding-right: 5px;
+  /* border: none; */
 }
+tr {
+  /* border: none; */
+}
+tbody tr {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* Apply border-radius to the first and last td of the row */
+
 select {
   background-color: #bfbfbf;
   border: 1px solid#bfbfbf;
@@ -38,7 +55,12 @@ select {
   color: #fff;
   width: 100px;
   height: 20px;
+  cursor: pointer;
 }
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
 select option {
   background-color: #fff; /* Inherit the background color */
   color: #737373;
@@ -64,7 +86,7 @@ a {
 }
 .navbar {
   display: flex;
-  justify-content: space-between;
+  gap: 30px;
   align-items: center;
   background-color: #bcbcbc;
   padding: 10px;
@@ -72,6 +94,7 @@ a {
 
 .navbar-end {
   display: flex;
+  margin-right: auto;
   align-items: center;
   text-align: center;
 }
@@ -93,7 +116,14 @@ a {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  padding: 5px;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  gap: 5px;
 }
 .categories-container {
   display: flex;
@@ -139,6 +169,7 @@ a {
 .lists-container {
   display: flex;
   gap: 10px;
+  justify-content: center;
 }
 .list-container {
   display: flex;
@@ -208,7 +239,6 @@ a {
 
 .step-title {
   margin-top: 5px; /* Spacing between step and title */
-  font-size: 12px; /* Smaller font size for the title */
   color: #666; /* Grey color for the title text */
 }
 
@@ -271,12 +301,12 @@ button {
 /* Style the dropdown container */
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: none;
 }
 
 /* Style the dropdown button */
 .dropdown-button {
-  background-color: #3498db;
+  background-color: #899ae1;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -314,4 +344,32 @@ button {
 /* Show the dropdown content when the dropdown button is hovered over */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* pagination */
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.pagination li {
+  margin: 0 5px;
+}
+.pagination a {
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid #000;
+  color: #000;
+}
+.pagination a:hover {
+  background-color: #000;
+  color: #fff;
+}
+@media (max-width: 849px) {
+  #navbar-middle {
+    display: none; /* Adjust the height for smaller screens */
+  }
+  #dropdown {
+    display: inline-block; /* Adjust the height for smaller screens */
+  }
 }
