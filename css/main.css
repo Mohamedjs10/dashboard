@@ -113,6 +113,12 @@ a {
   padding: 7px 10px 7px 23px;
   border-radius: 5px;
 }
+.navbar-item-selected {
+  position: relative;
+  padding: 7px 10px 7px 23px;
+  border-radius: 5px;
+  background-color: #cfd501;
+}
 .navbar-item:hover {
   background-color: #cfd501;
   cursor: pointer;

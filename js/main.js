@@ -4,39 +4,49 @@ const navbarItems = [
     title: "الرئيسية",
     url: "../index.html",
     notificationNumber: "5",
+    keyWord: "index",
   },
   {
     title: "الفاعليات",
     url: "../html/events.html",
     notificationNumber: "5",
+    keyWord: "events",
   },
   {
     title: "التصاريح",
     url: "../html/permits.html",
     notificationNumber: "5",
+    keyWord: "permits",
   },
   {
     title: "دعم الفاعليات",
     url: "../html/events-support.html",
     notificationNumber: "5",
+    keyWord: "support",
   },
   {
     title: "المساعدة",
     url: "../html/help.html",
     notificationNumber: "5",
+    keyWord: "help",
   },
   {
     title: "الاعدادات",
     url: "../html/settings.html",
     notificationNumber: "5",
+    keyWord: "settings",
   },
 ];
 
 if (document.getElementById("navbar-middle")) {
+  const url = window.location.href;
+
   const navbarItemsContainer = document.getElementById("navbar-middle");
   navbarItems.forEach((item) => {
     const element = document.createElement("a");
-    element.classList.add("navbar-item");
+    const className =
+      url.indexOf(item.keyWord) !== -1 ? "navbar-item-selected" : "navbar-item";
+    element.classList.add(className);
     element.href = item.url;
     element.innerHTML = `
           <p>${item.title}</p>
