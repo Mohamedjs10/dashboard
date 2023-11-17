@@ -45,7 +45,9 @@ tbody tr {
   background-color: #fff;
   border-radius: 5px;
 }
-
+label {
+  cursor: pointer;
+}
 /* Apply border-radius to the first and last td of the row */
 button {
   border: none;
@@ -134,8 +136,8 @@ a {
 .container {
   display: flex;
   flex-direction: column;
-  margin: 10px;
-  gap: 5px;
+  margin: 30px;
+  gap: 30px;
 }
 .categories-container {
   display: flex;
@@ -184,7 +186,7 @@ a {
 }
 .lists-container {
   display: flex;
-  gap: 10px;
+  gap: 50px;
   justify-content: center;
 }
 .list-container {
@@ -225,6 +227,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 550px;
+  margin: auto;
 }
 
 .step {
@@ -272,10 +276,10 @@ a {
 /* Existing styles for the stepper ... */
 
 .content {
-  margin-top: 20px;
+  /* margin-top: 20px;
   padding: 10px;
-  border: 1px solid #ddd;
-  display: none; /* Hide by default, will be shown by JS */
+  border: 1px solid #ddd; */
+  display: none;
 }
 
 #navigation-buttons {
@@ -455,4 +459,107 @@ button {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.parent-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 50px;
+}
+.child-flex {
+  /* max-width: 50%; */
+  display: flex;
+  flex-wrap: wrap;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+.input-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  /* width: 60px; */
+  /* height: 34px; */
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  /* height: 26px; */
+  /* width: 26px; */
+  height: 18px;
+  width: 18px;
+  /* left: 4px;
+  bottom: 4px; */
+  left: 3px;
+  bottom: 3.5px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #6fd272;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #6fd272;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.content-container {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: auto;
+  border-radius: 5px;
+  max-width: 600px;
+}
+.custom-file-upload {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

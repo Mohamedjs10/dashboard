@@ -63,19 +63,89 @@
         </div>
       </div>
 
-      <!-- Content for each step -->
-      <div class="content" id="content-1">Content for Step 1</div>
-      <div class="content" id="content-2" style="display: none">
-        Content for Step 2
-      </div>
-      <div class="content" id="content-3" style="display: none">
-        Content for Step 3
-      </div>
-      <div class="content" id="content-4" style="display: none">
-        Content for Step 4
-      </div>
-      <div class="content" id="content-5" style="display: none">
-        Content for Step 5
+      <div class="content-container">
+        <!-- Content for each step -->
+        <div class="content" id="content-1" >
+          <div class="parent-flex">
+            <div class="child-flex">
+              <div input-container>
+                <label>عنوان الفاعلية</label>
+                <select class="custom-input">
+                  <option selected disabled></option>
+                  <option value="option1">فعال</option>
+                  <option value="option2">متوقف</option>
+                </select>
+              </div>
+              <div input-container>
+                <label>عنوان الفاعلية</label>
+                <select class="custom-input">
+                  <option selected disabled></option>
+                  <option value="option1">فعال</option>
+                  <option value="option2">متوقف</option>
+                </select>
+              </div>
+              <div input-container>
+                <label>عنوان الفاعلية</label>
+                <input type="text" class="custom-input" />
+              </div>
+              <div input-container>
+                <label>عنوان الفاعلية</label>
+                <input type="text" class="custom-input" />
+              </div>
+              <div input-container>
+                <label>عنوان الفاعلية</label>
+                <input type="text" class="custom-input" />
+              </div>
+              <div input-container>
+                <label>عنوان الفاعلية</label>
+                <input type="text" class="custom-input" />
+              </div>
+              <div input-container>
+                <label>عنوان الفاعلية</label>
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+              <div input-container>
+                <label>عنوان الفاعلية</label>
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+            <div class="child-flex image-upload-container">
+              <form
+                action="/upload"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                <label for="file-upload" class="custom-file-upload">
+                  معاينة للصورة المختارة مع خاصية الـ crop
+                </label>
+                <input
+                  id="file-upload"
+                  type="file"
+                  name="image"
+                  multiple
+                  hidden
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="content" id="content-2" style="display: none"">Content for Step 1</div>
+
+        <div class="content" id="content-3" style="display: none">
+          Content for Step 3
+        </div>
+        <div class="content" id="content-4" style="display: none">
+          Content for Step 4
+        </div>
+        <div class="content" id="content-5" style="display: none">
+          Content for Step 5
+        </div>
       </div>
 
       <!-- Navigation buttons -->
