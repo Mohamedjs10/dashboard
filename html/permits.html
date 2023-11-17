@@ -68,47 +68,55 @@
         <div class="content" id="content-1" >
           <div class="parent-flex">
             <div class="child-flex">
-              <div input-container>
-                <label>عنوان الفاعلية</label>
+              <div class="input-container">
+                <label>نوع الفاعلية</label>
                 <select class="custom-input">
                   <option selected disabled></option>
                   <option value="option1">فعال</option>
                   <option value="option2">متوقف</option>
                 </select>
               </div>
-              <div input-container>
-                <label>عنوان الفاعلية</label>
+              <div class="input-container">
+                <label>نوع الأدب</label>
                 <select class="custom-input">
                   <option selected disabled></option>
                   <option value="option1">فعال</option>
                   <option value="option2">متوقف</option>
                 </select>
               </div>
-              <div input-container>
+              <div class="input-container">
                 <label>عنوان الفاعلية</label>
                 <input type="text" class="custom-input" />
               </div>
-              <div input-container>
-                <label>عنوان الفاعلية</label>
+              <div class="input-container">
+                <label>وصف الفاعلية</label>
                 <input type="text" class="custom-input" />
               </div>
-              <div input-container>
-                <label>عنوان الفاعلية</label>
+              <div class="input-container">
+                <label>صورة</label>
                 <input type="text" class="custom-input" />
               </div>
-              <div input-container>
-                <label>عنوان الفاعلية</label>
+              <div class="input-container">
+                <label>تاريخ البداية</label>
                 <input type="text" class="custom-input" />
               </div>
-              <div input-container>
-                <label>عنوان الفاعلية</label>
+              <div class="input-container">
+                <label>تاريخ النهاية</label>
+                <input type="text" class="custom-input" />
+              </div>
+              <div class="input-container">
+                <label>عدد الحضور</label>
+                <input type="text" class="custom-input" />
+              </div>
+              <div class="input-container">
+                <label>يوجد شركات؟</label>
                 <label class="switch">
                   <input type="checkbox" />
                   <span class="slider round"></span>
                 </label>
               </div>
-              <div input-container>
-                <label>عنوان الفاعلية</label>
+              <div class="input-container">
+                <label>هل تحتاج دعم؟</label>
                 <label class="switch">
                   <input type="checkbox" />
                   <span class="slider round"></span>
@@ -120,8 +128,9 @@
                 action="/upload"
                 method="post"
                 enctype="multipart/form-data"
+                class="dropzone"
               >
-                <label for="file-upload" class="custom-file-upload">
+                <label for="file-upload" class="custom-file-upload dropzone">
                   معاينة للصورة المختارة مع خاصية الـ crop
                 </label>
                 <input
@@ -130,6 +139,7 @@
                   name="image"
                   multiple
                   hidden
+                  class="dropzone-input"
                 />
               </form>
             </div>
