@@ -140,7 +140,8 @@ a {
 .categories-container {
   display: flex;
   gap: 10px;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
+  /* margin-right: auto; */
 }
 .category {
   background-color: #f2f2f2;
@@ -170,12 +171,16 @@ a {
 
 .list-item {
   border-radius: 5px;
-  padding: 5px;
-  margin: 5px;
+  padding: 10px;
+  margin: 10px;
   background-color: #f8f8f8;
   cursor: pointer;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: self-start;
 }
 .lists-container {
   display: flex;
@@ -421,4 +426,33 @@ button {
   color: #bfbfbf;
   background-color: #000;
   border-radius: 5px;
+}
+.breadcrumb {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  margin-left: auto;
+  display: flex;
+  gap: 5px;
+  color: #a3a3a3;
+}
+.breadcrumb a {
+  text-decoration: none;
+  color: #000;
+  color: #a3a3a3;
+}
+.breadcrumb span {
+  margin: 0 5px;
+}
+.alert {
+  text-align: right;
+  background-color: #f3f1aa;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

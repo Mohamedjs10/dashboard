@@ -43,6 +43,13 @@ if (document.getElementById("navbar-middle")) {
 
   const navbarItemsContainer = document.getElementById("navbar-middle");
   navbarItems.forEach((item) => {
+    //*
+    if (url.indexOf(item.keyWord) !== -1 && item.title !== "الرئيسية") {
+      const branch = document.getElementById("branch");
+      branch.innerHTML = item.title;
+    }
+
+    //*
     const element = document.createElement("a");
     const className =
       url.indexOf(item.keyWord) !== -1 ? "navbar-item-selected" : "navbar-item";
@@ -166,6 +173,12 @@ if (document.getElementById("table-header")) {
     headerContainer.appendChild(element);
   });
 }
+// **
+
+// if (document.getElementById("branch")) {
+//   const branch = document.getElementById("branch");
+//   branch.innerHTML = "test";
+// }
 
 //* categories
 

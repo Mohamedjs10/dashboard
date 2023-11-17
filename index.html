@@ -8,6 +8,7 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
+
   <body dir="rtl">
     <nav class="navbar">
       <div style="font-size: 30px; font-weight: bold">الشعار</div>
@@ -29,7 +30,13 @@
       </div>
     </nav>
     <div class="container">
-      <div class="categories-container" id="categories-container"></div>
+      <div class="categories-container" id="categories-container">
+        <div class="breadcrumb">
+          <a href="../index.html" id="main">الرئيسية</a>
+          <div>&gt;</div>
+          <a id="branch"></a>
+        </div>
+      </div>
       <div class="form-container">
         <input type="text" class="custom-input" placeholder="رقم الطلب" />
         <input type="text" class="custom-input" placeholder="اسم الفعالة" />
