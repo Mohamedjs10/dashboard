@@ -6,6 +6,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css"
+  />
     <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body dir="rtl">
@@ -124,24 +128,33 @@
               </div>
             </div>
             <div class="child-flex image-upload-container">
-              <form
-                action="/upload"
-                method="post"
-                enctype="multipart/form-data"
+              <div
                 class="dropzone"
               >
-                <label for="file-upload" class="custom-file-upload dropzone">
+                <label for="imageInput" class="custom-file-upload dropzone">
                   معاينة للصورة المختارة مع خاصية الـ crop
                 </label>
                 <input
-                  id="file-upload"
+                  id="imageInput"
                   type="file"
+                  accept="image/*"
                   name="image"
                   multiple
                   hidden
                   class="dropzone-input"
                 />
-              </form>
+              </div>
+              <div id="imageContainer">
+                <img id="cropperImage" src="" />
+              </div>
+              <button id="cropButton">Crop</button>
+              <div id="croppedContainer">
+                <img id="croppedImage" src="" />
+
+
+
+              </div>
+              <button id="openInNewTabButton" style="display: none;">Open in New Tab</button>
             </div>
           </div>
         </div>
@@ -167,7 +180,8 @@
         </button>
       </div>
     </div>
-    <script src="../js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

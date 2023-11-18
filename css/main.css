@@ -52,7 +52,11 @@ label {
 button {
   border: none;
   outline: none;
-  width: 50px;
+  width: initial;
+  background-color: #899ae1;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
 }
 select {
   background-color: #bfbfbf;
@@ -470,11 +474,14 @@ button {
   max-width: 50%;
   display: flex;
   flex-wrap: wrap;
-
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: flex-start; */
   align-items: flex-start;
   gap: 20px;
+}
+.image-upload-container {
+  align-items: center;
+  gap: 10px;
 }
 .input-container {
   width: 100%;
@@ -565,4 +572,42 @@ input:checked + .slider:before {
   padding: 10px;
   padding-top: 30px;
   padding-bottom: 30px;
+}
+/* image crop */
+#imageContainer {
+  width: 300px; /* Fixed width for the uploaded image */
+  height: 300px; /* Fixed height for the uploaded image */
+  overflow: hidden;
+  margin: 20px 0;
+  border: 1px dashed #b8bcc2;
+  border-radius: 5px;
+}
+
+#cropperImage {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+#cropButton {
+  display: block;
+  margin-top: 10px;
+}
+
+#croppedContainer {
+  display: none;
+  width: 200px; /* Fixed width for the cropped image */
+  height: 200px; /* Fixed height for the cropped image */
+  overflow: hidden;
+  margin-top: 20px;
+  border: 1px dashed #b8bcc2;
+  border-radius: 5px;
+}
+
+#croppedImage {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 }

@@ -318,3 +318,57 @@ function submitForm() {
 updateStep(currentStep);
 
 //* pagination
+
+//* image crop
+const imageInput = document.getElementById("imageInput");
+const imageContainer = document.getElementById("imageContainer");
+const cropperImage = document.getElementById("cropperImage");
+const cropButton = document.getElementById("cropButton");
+const croppedContainer = document.getElementById("croppedContainer");
+const croppedImage = document.getElementById("croppedImage");
+const openInNewTabButton = document.getElementById("openInNewTabButton");
+let croppedDataUrl = null;
+
+const cropper = new Cropper(cropperImage, {
+  aspectRatio: 1, // You can change the aspect ratio as needed
+});
+
+imageInput.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      cropperImage.src = e.target.result;
+      imageContainer.style.display = "block";
+      croppedContainer.style.display = "none";
+      cropper.replace(e.target.result);
+    };
+    reader.readAsDataURL(file);
+  }
+});
+
+cropButton.addEventListener("click", () => {
+  // Get the cropped image data
+  const croppedCanvas = cropper.getCroppedCanvas();
+  croppedDataUrl = croppedCanvas.toDataURL();
+
+  // Display the cropped image
+  croppedImage.src = croppedDataUrl;
+  croppedContainer.style.display = "block";
+
+  //
+  openInNewTabButton.style.display = "block";
+});
+
+openInNewTabButton.addEventListener("click", () => {
+  // Open the cropped image in a new tab
+  if (croppedDataUrl) {
+    // Create a new window with the cropped image as the source
+    const newWindow = window.open();
+    newWindow.document.write(
+      `<img src="${croppedDataUrl}" alt="Cropped Image">`
+    );
+    newWindow.document.close();
+  }
+});
