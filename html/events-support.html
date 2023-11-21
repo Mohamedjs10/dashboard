@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/main.css" />
+  </head>
+  <body dir="rtl">
+    <nav class="navbar">
+      <div style="font-size: 30px; font-weight: bold">الشعار</div>
+      <div class="dropdown" id="dropdown">
+        <button class="dropdown-button">القائمة</button>
+        <div class="dropdown-content" id="dropdown-content"></div>
+      </div>
+      <div class="navbar-middle" id="navbar-middle"></div>
+      <div class="navbar-end">
+        <div>
+          <p style="font-size: 20px; font-weight: bold">محمد حسين</p>
+          <p>مقهي هاف مليون</p>
+        </div>
+        <img
+          src="../assets//images/img_avatar.png"
+          alt="Avatar"
+          class="avatar"
+        />
+      </div>
+    </nav>
+    <div class="new-container">
+      <div class="breadcrumb">
+        <a href="../index.html" id="main">الرئيسية</a>
+        <div>&gt;</div>
+        <a id="branch"></a>
+      </div>
+    </div>
+    <div id="map"></div>
+    <script>
+      // Initialize and create the Google Map
+      function initMap() {
+        // Replace 'YOUR_API_KEY' with your actual API Key
+        const apiKey = "YOUR_API_KEY";
+
+        // Initialize the map
+        const map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 37.7749, lng: -122.4194 }, // Set the initial map center
+          zoom: 13, // Set the initial zoom level
+        });
+      }
+    </script>
+    <!-- Include the Google Maps JavaScript API using your API Key -->
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    ></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

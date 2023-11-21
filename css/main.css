@@ -7,11 +7,15 @@
 * {
   padding: 0;
   margin: 0;
-  text-align: center;
+  /* text-align: center; */
   vertical-align: middle;
   font-size: 15px;
+  /* border: 2px solid #000; */
 }
-
+#map {
+  height: 500px; /* Adjust the height as needed */
+  width: 100%; /* Adjust the width as needed */
+}
 body {
   font-family: "BousniRondeLTStd", sans-serif;
   width: 100%;
@@ -37,6 +41,9 @@ td {
   padding-left: 5px;
   padding-right: 5px;
   /* border: none; */
+}
+th {
+  text-align: right;
 }
 tr {
   /* border: none; */
@@ -142,6 +149,14 @@ a {
   flex-direction: column;
   margin: 30px;
   gap: 30px;
+  /* width: 100%; */
+}
+.new-container {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  gap: 30px;
+  width: 100%;
 }
 .categories-container {
   display: flex;
@@ -231,7 +246,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 70%;
+  width: 100%;
   margin: auto;
 }
 
@@ -288,6 +303,9 @@ a {
 
 #navigation-buttons {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 button {
@@ -559,19 +577,24 @@ input:checked + .slider:before {
 }
 .content-container {
   background-color: #f2f2f2;
-  padding: 20px;
+  /* padding: 20px; */
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin: auto;
   border-radius: 5px;
-  width: 70%;
+  width: 100%;
 }
 .custom-file-upload {
 }
 .dropzone {
   background-color: #fff;
   border-radius: 5px;
+  /* padding: 10px; */
+  /* padding-top: 30px;
+  padding-bottom: 30px;  */
+  /* border: 1px solid grey; */
+  /* margin: 10px; */
   padding: 10px;
-  padding-top: 30px;
-  padding-bottom: 30px;
 }
 /* image crop */
 #imageContainer {
@@ -610,4 +633,189 @@ input:checked + .slider:before {
   max-height: 100%;
   width: auto;
   height: auto;
+}
+/* modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #e5e5e5;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 25%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 5px;
+}
+
+/* Close button style */
+.close {
+  color: #888;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* modal content */
+#closeModalBtn {
+  margin-right: auto;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title div {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.submit-container button {
+  min-width: 100px;
+}
+.url-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.url-container label {
+  width: 100px;
+}
+.url-container input {
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  height: 30px;
+}
+.swiper-slide {
+  width: initial !important;
+  position: relative;
+}
+.swiper-slide img {
+  width: 80px;
+  border-radius: 5px;
+}
+.swiper-slide i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #f45050;
+  color: #fff;
+  border-radius: 50%;
+  padding: 4px;
+  margin: 2px;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+/* Styles for the Swiper container */
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative; /* Make sure it's positioned relatively */
+}
+.swiper-pagination-bullets {
+  display: none;
+}
+/* Style for the swiper container */
+.swiper-container {
+}
+
+/* Style for the next button */
+.swiper-button-next {
+  position: absolute;
+  bottom: 200px; /* Adjust the bottom distance as needed */
+  right: 200px; /* Adjust the right distance as needed */
+  display: none;
+}
+
+/* Style for the previous button */
+.swiper-button-prev {
+  position: absolute;
+  bottom: 20px; /* Adjust the bottom distance as needed */
+  left: 20px; /* Adjust the left distance as needed */
+  display: none;
+}
+
+.body-wrapper {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+}
+
+/* Basic CSS for the vertical stepper */
+.v-stepper {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  padding: 20px;
+}
+
+.v-step {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  gap: 10px;
+}
+.v-step .v-step-title {
+  text-align: left;
+}
+.v-step-number {
+  width: 20px;
+  height: 20px;
+  background-color: #c9c9c9;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.v-step-title {
+  width: 70px;
+}
+.v-step-content {
+  padding: 10px;
+  background-color: #fbff7a;
+  width: 300px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.active .v-step-number {
+  background-color: #918e8e;
+  border-radius: 50%;
+}
+/* container-b */
+.container-b {
+  position: relative;
+  top: 140px;
 }

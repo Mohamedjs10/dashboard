@@ -32,152 +32,217 @@
         />
       </div>
     </nav>
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="../index.html" id="main">الرئيسية</a>
-        <div>&gt;</div>
-        <a id="branch"></a>
-      </div>
-      <!-- stepper -->
-      <div id="stepper-container">
-        <!-- Stepper steps with titles -->
-        <div class="step-container">
-          <div class="step active" data-step="1" onclick="updateStep(1)">1</div>
-          <div class="step-title">البداية</div>
+    <div class="body-wrapper">
+      <div class="new-container">
+        <div class="breadcrumb">
+          <a href="../index.html" id="main">الرئيسية</a>
+          <div>&gt;</div>
+          <a id="branch"></a>
         </div>
-        <div class="connector"></div>
-        <div class="step-container">
-          <div class="step" data-step="2" onclick="updateStep(2)">2</div>
-          <div class="step-title">المكان</div>
-        </div>
-        <div class="connector"></div>
-        <div class="step-container">
-          <div class="step" data-step="3" onclick="updateStep(3)">3</div>
-          <div class="step-title">المتحدثون</div>
-        </div>
-        <div class="connector"></div>
-        <div class="step-container">
-          <div class="step" data-step="4" onclick="updateStep(4)">4</div>
-          <div class="step-title">الشركات</div>
-        </div>
-        <div class="connector"></div>
-        <div class="step-container">
-          <div class="step" data-step="5" onclick="updateStep(5)">5</div>
-          <div class="step-title">الدعم</div>
-        </div>
-      </div>
-
-      <div class="content-container">
-        <!-- Content for each step -->
-        <div class="content" id="content-1" >
-          <div class="parent-flex">
-            <div class="child-flex">
-              <div class="input-container">
-                <label>نوع الفاعلية</label>
-                <select class="custom-input">
-                  <option selected disabled></option>
-                  <option value="option1">فعال</option>
-                  <option value="option2">متوقف</option>
-                </select>
-              </div>
-              <div class="input-container">
-                <label>نوع الأدب</label>
-                <select class="custom-input">
-                  <option selected disabled></option>
-                  <option value="option1">فعال</option>
-                  <option value="option2">متوقف</option>
-                </select>
-              </div>
-              <div class="input-container">
-                <label>عنوان الفاعلية</label>
-                <input type="text" class="custom-input" />
-              </div>
-              <div class="input-container">
-                <label>وصف الفاعلية</label>
-                <input type="text" class="custom-input" />
-              </div>
-              <div class="input-container">
-                <label>صورة</label>
-                <input type="text" class="custom-input" />
-              </div>
-              <div class="input-container">
-                <label>تاريخ البداية</label>
-                <input type="text" class="custom-input" />
-              </div>
-              <div class="input-container">
-                <label>تاريخ النهاية</label>
-                <input type="text" class="custom-input" />
-              </div>
-              <div class="input-container">
-                <label>عدد الحضور</label>
-                <input type="text" class="custom-input" />
-              </div>
-              <div class="input-container">
-                <label>يوجد شركات؟</label>
-                <label class="switch">
-                  <input type="checkbox" />
-                  <span class="slider round"></span>
-                </label>
-              </div>
-              <div class="input-container">
-                <label>هل تحتاج دعم؟</label>
-                <label class="switch">
-                  <input type="checkbox" />
-                  <span class="slider round"></span>
-                </label>
-              </div>
-            </div>
-            <div class="child-flex image-upload-container">
-              <div
-                class="dropzone"
-              >
-                <label for="imageInput" class="custom-file-upload dropzone">
-                  معاينة للصورة المختارة مع خاصية الـ crop
-                </label>
-                <input
-                  id="imageInput"
-                  type="file"
-                  accept="image/*"
-                  name="image"
-                  multiple
-                  hidden
-                  class="dropzone-input"
-                />
-              </div>
-              <div id="imageContainer">
-                <img id="cropperImage" src="" />
-              </div>
-              <button id="cropButton">Crop</button>
-              <div id="croppedContainer">
-                <img id="croppedImage" src="" />
-
-
-
-              </div>
-              <button id="openInNewTabButton" style="display: none;">Open in New Tab</button>
-            </div>
+        <!-- stepper -->
+        <div id="stepper-container">
+          <!-- Stepper steps with titles -->
+          <div class="step-container">
+            <div class="step active" data-step="1" onclick="updateStep(1)">1</div>
+            <div class="step-title">البداية</div>
+          </div>
+          <div class="connector"></div>
+          <div class="step-container">
+            <div class="step" data-step="2" onclick="updateStep(2)">2</div>
+            <div class="step-title">المكان</div>
+          </div>
+          <div class="connector"></div>
+          <div class="step-container">
+            <div class="step" data-step="3" onclick="updateStep(3)">3</div>
+            <div class="step-title">المتحدثون</div>
+          </div>
+          <div class="connector"></div>
+          <div class="step-container">
+            <div class="step" data-step="4" onclick="updateStep(4)">4</div>
+            <div class="step-title">الشركات</div>
+          </div>
+          <div class="connector"></div>
+          <div class="step-container">
+            <div class="step" data-step="5" onclick="updateStep(5)">5</div>
+            <div class="step-title">الدعم</div>
           </div>
         </div>
-        <div class="content" id="content-2" style="display: none"">Content for Step 1</div>
-
-        <div class="content" id="content-3" style="display: none">
-          Content for Step 3
+  
+        <div class="content-container">
+          <!-- Content for each step -->
+          <div class="content" id="content-1" >
+            <div class="parent-flex">
+              <div class="child-flex">
+                <div class="input-container">
+                  <label>نوع الفاعلية</label>
+                  <select class="custom-input">
+                    <option selected disabled></option>
+                    <option value="option1">فعال</option>
+                    <option value="option2">متوقف</option>
+                  </select>
+                </div>
+                <div class="input-container">
+                  <label>نوع الأدب</label>
+                  <select class="custom-input">
+                    <option selected disabled></option>
+                    <option value="option1">فعال</option>
+                    <option value="option2">متوقف</option>
+                  </select>
+                </div>
+                <div class="input-container">
+                  <label>عنوان الفاعلية</label>
+                  <input type="text" class="custom-input" />
+                </div>
+                <div class="input-container">
+                  <label>وصف الفاعلية</label>
+                  <input type="text" class="custom-input" />
+                </div>
+                <div class="input-container">
+                  <label>صورة</label>
+                  <input type="text" class="custom-input" />
+                </div>
+                <div class="input-container">
+                  <label>تاريخ البداية</label>
+                  <input type="text" class="custom-input" />
+                </div>
+                <div class="input-container">
+                  <label>تاريخ النهاية</label>
+                  <input type="text" class="custom-input" />
+                </div>
+                <div class="input-container">
+                  <label>عدد الحضور</label>
+                  <input type="text" class="custom-input" />
+                </div>
+                <div class="input-container">
+                  <label>يوجد شركات؟</label>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+                <div class="input-container">
+                  <label>هل تحتاج دعم؟</label>
+                  <label class="switch">
+                    <input type="checkbox" />
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="child-flex image-upload-container">
+                <div
+                  class="dropzone"
+                >
+                  <label for="imageInput" class="custom-file-upload dropzone">
+                    معاينة للصورة المختارة مع خاصية الـ crop
+                  </label>
+                  <input
+                    id="imageInput"
+                    type="file"
+                    accept="image/*"
+                    name="image"
+                    multiple
+                    hidden
+                    class="dropzone-input"
+                  />
+                </div>
+                <div id="imageContainer">
+                  <img id="cropperImage" src="" />
+                </div>
+                <button id="cropButton">Crop</button>
+                <div id="croppedContainer">
+                  <img id="croppedImage" src="" />
+  
+  
+  
+                </div>
+                <button id="openInNewTabButton" style="display: none;">Open in New Tab</button>
+              </div>
+            </div>
+          </div>
+          <div class="content" id="content-2" style="display: none"">Content for Step 2</div>
+  
+          <div class="content" id="content-3" style="display: none">
+            Content for Step 3
+          </div>
+          <div class="content" id="content-4" style="display: none">
+            Content for Step 4
+          </div>
+          <div class="content" id="content-5" style="display: none">
+            Content for Step 5
+          </div>
         </div>
-        <div class="content" id="content-4" style="display: none">
-          Content for Step 4
-        </div>
-        <div class="content" id="content-5" style="display: none">
-          Content for Step 5
+  
+        <!-- Navigation buttons -->
+        <div id="navigation-buttons">
+          <button id="back-button" onclick="moveStep(-1)">السابق</button>
+          <button id="next-button" onclick="moveStep(1)">التالي</button>
+          <button id="submit-button" style="display: none" onclick="submitForm()">
+            تأكيد
+          </button>
         </div>
       </div>
-
-      <!-- Navigation buttons -->
-      <div id="navigation-buttons">
-        <button id="back-button" onclick="moveStep(-1)">السابق</button>
-        <button id="next-button" onclick="moveStep(1)">التالي</button>
-        <button id="submit-button" style="display: none" onclick="submitForm()">
-          تأكيد
-        </button>
+      <!-- +++++++++++++++++++++++ -->
+      <div class="container-b">
+        <div class="v-stepper">
+          <div class="v-step" onclick="goToStep(1)">
+            <div class="v-step-content">
+              <div style="display: flex; justify-content: space-between;">
+              <div style="font-weight: bold;">سميرغانم</div>
+            <div> طلب تعديل</div>  
+            </div>
+            <div>هنا يكون رد المشرف واسباب رفض المعاملة أو طلب تعديل</div>
+            </div>
+            <div class="v-step-number"></div>
+            <div class="v-step-title">قبل 5 أيام</div>
+          </div>
+          <div class="v-step" onclick="goToStep(2)">
+            <div class="v-step-content">
+              <div style="display: flex; justify-content: space-between;">
+              <div style="font-weight: bold;">سميرغانم</div>
+            <div> طلب تعديل</div>  
+            </div>
+            <div>هنا يكون رد المشرف واسباب رفض المعاملة أو طلب تعديل</div>
+            </div>
+            <div class="v-step-number"></div>
+            <div class="v-step-title">قبل 5 أيام</div>
+          </div>
+          <div class="v-step" onclick="goToStep(3)">
+            <div class="v-step-content">
+              <div style="display: flex; justify-content: space-between;">
+              <div style="font-weight: bold;">سميرغانم</div>
+            <div> طلب تعديل</div>  
+            </div>
+            <div>هنا يكون رد المشرف واسباب رفض المعاملة أو طلب تعديل</div>
+            </div>
+            <div class="v-step-number"></div>
+            <div class="v-step-title">قبل 5 أيام</div>
+          </div>
+          <div class="v-step" onclick="goToStep(4)">
+            <div class="v-step-content">
+              <div style="display: flex; justify-content: space-between;">
+              <div style="font-weight: bold;">سميرغانم</div>
+            <div> طلب تعديل</div>  
+            </div>
+            <div>هنا يكون رد المشرف واسباب رفض المعاملة أو طلب تعديل</div>
+            </div>
+            <div class="v-step-number"></div>
+            <div class="v-step-title">قبل 5 أيام</div>
+          </div>
+          <div class="v-step" onclick="goToStep(5)">
+            <div class="v-step-content">
+              <div style="display: flex; justify-content: space-between;">
+              <div style="font-weight: bold;">سميرغانم</div>
+            <div> طلب تعديل</div>  
+            </div>
+            <div>هنا يكون رد المشرف واسباب رفض المعاملة أو طلب تعديل</div>
+            </div>
+            <div class="v-step-number"></div>
+            <div class="v-step-title">قبل 5 أيام</div>
+          </div>
+         
+      </div>
+  
+      
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>

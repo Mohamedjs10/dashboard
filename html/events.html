@@ -6,6 +6,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="../css/main.css" />
   </head>
   <body dir="rtl">
@@ -29,11 +33,14 @@
       </div>
     </nav>
     <div class="container">
-      <div class="breadcrumb">
-        <a href="../index.html" id="main">الرئيسية</a>
-        <div>&gt;</div>
-        <a id="branch"></a>
+      <div class="categories-container" id="categories-container">
+        <div class="breadcrumb">
+          <a href="../index.html" id="main">الرئيسية</a>
+          <div>&gt;</div>
+          <a id="branch"></a>
+        </div>
       </div>
+
       <div class="lists-container">
         <div class="list-container">
           <div class="list-header">
@@ -62,7 +69,7 @@
                 <button class="category-chosen" style="width: 70px">
                   تعديل الطلب
                 </button>
-                <button class="category">حذف</button>
+                <button class="category-chosen">حذف</button>
               </div>
             </div>
           </div>
@@ -94,7 +101,7 @@
                 <button class="category-chosen" style="width: 70px">
                   تعديل الطلب
                 </button>
-                <button class="category">حذف</button>
+                <button class="category-chosen">حذف</button>
               </div>
             </div>
           </div>
@@ -126,14 +133,92 @@
                 <button class="category-chosen" style="width: 70px">
                   تعديل الطلب
                 </button>
-                <button class="category">حذف</button>
+                <button class="category-chosen">حذف</button>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="../js/main.js"></script>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="title">
+          <div>إرسال تقرير نهاية التفاعلية</div>
+          <span class="close" id="closeModalBtn">&times;</span>
+        </div>
+        <div class="dropzone">
+          <!-- <label for="imageInput-upload" class="custom-file-upload dropzone"> -->
+          <label for="imageInput-upload" class="custom-file-upload">
+            <div>اسحب الصورة هنا</div>
+            <div>drop image here</div>
+          </label>
+          <input
+            id="imageInput-upload"
+            type="file"
+            accept="image/*"
+            name="image"
+            multiple
+            hidden
+            class="dropzone-input"
+          />
+        </div>
+
+        <!-- swiper -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <i class="fa-sharp fa-solid fa-xmark"></i>
+              <img src="https://rb.gy/c8h7y5" />
+            </div>
+            <div class="swiper-slide">
+              <i class="fa-sharp fa-solid fa-xmark"></i>
+              <img src="https://rb.gy/c8h7y5" />
+            </div>
+            <div class="swiper-slide">
+              <i class="fa-sharp fa-solid fa-xmark"></i>
+              <img src="https://rb.gy/c8h7y5" />
+            </div>
+            <div class="swiper-slide">
+              <i class="fa-sharp fa-solid fa-xmark"></i>
+              <img src="https://rb.gy/c8h7y5" />
+            </div>
+            <div class="swiper-slide">
+              <i class="fa-sharp fa-solid fa-xmark"></i>
+              <img src="https://rb.gy/c8h7y5" />
+            </div>
+            <div class="swiper-slide">
+              <i class="fa-sharp fa-solid fa-xmark"></i>
+              <img src="https://rb.gy/c8h7y5" />
+            </div>
+            <div class="swiper-slide">
+              <i class="fa-sharp fa-solid fa-xmark"></i>
+              <img src="https://rb.gy/c8h7y5" />
+            </div>
+
+            <!-- Add more slides as needed -->
+          </div>
+
+          <!-- If you want navigation buttons -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+
+          <!-- If you want pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+        <!--  -->
+        <p class="url-container">
+          <label>رابط الفديو</label>
+          <input />
+        </p>
+        <p class="submit-container">
+          <button class="category-chosen">حفظ</button>
+          <button class="category-chosen">الغاء</button>
+        </p>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

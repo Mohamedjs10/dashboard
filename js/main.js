@@ -4,37 +4,37 @@ const navbarItems = [
     title: "الرئيسية",
     url: "../index.html",
     notificationNumber: "5",
-    keyWord: "index",
+    keyWord: "index.html",
   },
   {
     title: "الفاعليات",
     url: "../html/events.html",
     notificationNumber: "5",
-    keyWord: "events",
+    keyWord: "events.html",
   },
   {
     title: "التصاريح",
     url: "../html/permits.html",
     notificationNumber: "5",
-    keyWord: "permits",
+    keyWord: "permits.html",
   },
   {
     title: "دعم الفاعليات",
     url: "../html/events-support.html",
     notificationNumber: "5",
-    keyWord: "support",
+    keyWord: "events-support.html",
   },
   {
     title: "المساعدة",
     url: "../html/help.html",
     notificationNumber: "5",
-    keyWord: "help",
+    keyWord: "hehelp.htmllp",
   },
   {
     title: "الاعدادات",
     url: "../html/settings.html",
     notificationNumber: "5",
-    keyWord: "settings",
+    keyWord: "settings.html",
   },
 ];
 
@@ -220,6 +220,9 @@ if (document.getElementById("categories-container")) {
       `${chosenCategory === item.id ? "category-chosen" : "category"}`
     );
 
+    if (item.id == 3) {
+      element.setAttribute("id", "openModalBtn");
+    }
     element.innerHTML = `
       <div onclick="changeSelected(${item.id})">${item.title}</div>
     `;
@@ -260,115 +263,208 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 
 //* stepper
-let currentStep = 1;
-const totalSteps = 5;
+if (document.getElementById("back-button")) {
+  let currentStep = 1;
+  const totalSteps = 5;
 
-function updateStep(stepNumber) {
-  // Ensure the step number is within the valid range
-  if (stepNumber < 1 || stepNumber > totalSteps) {
-    return;
-  }
-
-  // Update the current step
-  currentStep = stepNumber;
-  const steps = document.querySelectorAll(".step");
-  const connectors = document.querySelectorAll(".connector");
-
-  // Update steps and connectors
-  steps.forEach((step, index) => {
-    if (index < stepNumber) {
-      step.classList.add("active");
-    } else {
-      step.classList.remove("active");
+  function updateStep(stepNumber) {
+    // Ensure the step number is within the valid range
+    if (stepNumber < 1 || stepNumber > totalSteps) {
+      return;
     }
-  });
 
-  connectors.forEach((connector, index) => {
-    connector.style.background = index < stepNumber - 1 ? "#000" : "#ddd";
-  });
+    // Update the current step
+    currentStep = stepNumber;
+    const steps = document.querySelectorAll(".step");
+    const connectors = document.querySelectorAll(".connector");
 
-  // Update content visibility
-  for (let i = 1; i <= totalSteps; i++) {
-    const content = document.getElementById(`content-${i}`);
-    content.style.display = i === stepNumber ? "block" : "none";
+    // Update steps and connectors
+    steps.forEach((step, index) => {
+      if (index < stepNumber) {
+        step.classList.add("active");
+      } else {
+        step.classList.remove("active");
+      }
+    });
+
+    connectors.forEach((connector, index) => {
+      connector.style.background = index < stepNumber - 1 ? "#000" : "#ddd";
+    });
+
+    // Update content visibility
+    for (let i = 1; i <= totalSteps; i++) {
+      const content = document.getElementById(`content-${i}`);
+      content.style.display = i === stepNumber ? "block" : "none";
+    }
+
+    // Update button visibility
+    const backButton = document.getElementById("back-button");
+    const nextButton = document.getElementById("next-button");
+    const submitButton = document.getElementById("submit-button");
+
+    backButton.style.display = stepNumber === 1 ? "none" : "inline-block";
+    nextButton.style.display =
+      stepNumber === totalSteps ? "none" : "inline-block";
+    submitButton.style.display =
+      stepNumber === totalSteps ? "inline-block" : "none";
   }
 
-  // Update button visibility
-  const backButton = document.getElementById("back-button");
-  const nextButton = document.getElementById("next-button");
-  const submitButton = document.getElementById("submit-button");
+  function moveStep(offset) {
+    updateStep(currentStep + offset);
+  }
 
-  backButton.style.display = stepNumber === 1 ? "none" : "inline-block";
-  nextButton.style.display =
-    stepNumber === totalSteps ? "none" : "inline-block";
-  submitButton.style.display =
-    stepNumber === totalSteps ? "inline-block" : "none";
+  function submitForm() {
+    alert("Form submitted!");
+    // Implement actual submit logic here
+  }
+
+  // Initialize to the first step
+  updateStep(currentStep);
 }
-
-function moveStep(offset) {
-  updateStep(currentStep + offset);
-}
-
-function submitForm() {
-  alert("Form submitted!");
-  // Implement actual submit logic here
-}
-
-// Initialize to the first step
-updateStep(currentStep);
 
 //* pagination
 
 //* image crop
-const imageInput = document.getElementById("imageInput");
-const imageContainer = document.getElementById("imageContainer");
-const cropperImage = document.getElementById("cropperImage");
-const cropButton = document.getElementById("cropButton");
-const croppedContainer = document.getElementById("croppedContainer");
-const croppedImage = document.getElementById("croppedImage");
-const openInNewTabButton = document.getElementById("openInNewTabButton");
-let croppedDataUrl = null;
+if (document.getElementById("imageInput")) {
+  const imageInput = document.getElementById("imageInput");
+  const imageContainer = document.getElementById("imageContainer");
+  const cropperImage = document.getElementById("cropperImage");
+  const cropButton = document.getElementById("cropButton");
+  const croppedContainer = document.getElementById("croppedContainer");
+  const croppedImage = document.getElementById("croppedImage");
+  const openInNewTabButton = document.getElementById("openInNewTabButton");
+  let croppedDataUrl = null;
 
-const cropper = new Cropper(cropperImage, {
-  aspectRatio: 1, // You can change the aspect ratio as needed
-});
+  const cropper = new Cropper(cropperImage, {
+    aspectRatio: 1, // You can change the aspect ratio as needed
+  });
 
-imageInput.addEventListener("change", (e) => {
-  const file = e.target.files[0];
+  imageInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
 
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = function (e) {
-      cropperImage.src = e.target.result;
-      imageContainer.style.display = "block";
-      croppedContainer.style.display = "none";
-      cropper.replace(e.target.result);
-    };
-    reader.readAsDataURL(file);
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        cropperImage.src = e.target.result;
+        imageContainer.style.display = "block";
+        croppedContainer.style.display = "none";
+        cropper.replace(e.target.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  cropButton.addEventListener("click", () => {
+    // Get the cropped image data
+    const croppedCanvas = cropper.getCroppedCanvas();
+    croppedDataUrl = croppedCanvas.toDataURL();
+
+    // Display the cropped image
+    croppedImage.src = croppedDataUrl;
+    croppedContainer.style.display = "block";
+
+    //
+    openInNewTabButton.style.display = "block";
+  });
+
+  openInNewTabButton.addEventListener("click", () => {
+    // Open the cropped image in a new tab
+    if (croppedDataUrl) {
+      // Create a new window with the cropped image as the source
+      const newWindow = window.open();
+      newWindow.document.write(
+        `<img src="${croppedDataUrl}" alt="Cropped Image">`
+      );
+      newWindow.document.close();
+    }
+  });
+}
+
+//* modal box
+// Get references to the modal and the buttons
+if (document.getElementById("myModal")) {
+  const modal = document.getElementById("myModal");
+  const openModalBtn = document.getElementById("openModalBtn");
+  const closeModalBtn = document.getElementById("closeModalBtn");
+  if (window.location.href.indexOf("help") !== -1) {
+    modal.style.display = "flex";
   }
-});
-
-cropButton.addEventListener("click", () => {
-  // Get the cropped image data
-  const croppedCanvas = cropper.getCroppedCanvas();
-  croppedDataUrl = croppedCanvas.toDataURL();
-
-  // Display the cropped image
-  croppedImage.src = croppedDataUrl;
-  croppedContainer.style.display = "block";
-
-  //
-  openInNewTabButton.style.display = "block";
-});
-
-openInNewTabButton.addEventListener("click", () => {
-  // Open the cropped image in a new tab
-  if (croppedDataUrl) {
-    // Create a new window with the cropped image as the source
-    const newWindow = window.open();
-    newWindow.document.write(
-      `<img src="${croppedDataUrl}" alt="Cropped Image">`
-    );
-    newWindow.document.close();
+  // Function to open the modal
+  function openModal() {
+    modal.style.display = "flex";
   }
-});
+
+  // Function to close the modal
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  // Event listeners to open and close the modal
+  openModalBtn.addEventListener("click", openModal);
+  closeModalBtn.addEventListener("click", closeModal);
+
+  // Close the modal if the user clicks outside of it
+  window.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      closeModal();
+    }
+  });
+}
+// image upload
+if (document.getElementById("imageInput-upload")) {
+  const imageInput = document.getElementById("imageInput-upload");
+
+  imageInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        console.log(e.target.result); // image source
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+}
+// *swiper
+if (document.getElementsByClassName("swiper-container").length) {
+  var swiper = new Swiper(".swiper-container", {
+    // Optional Swiper configuration options here
+    loop: true, // Example: enable loop
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    slidesPerView: 3,
+    spaceBetween: 15,
+    // Optional: Add Swiper options here
+    // Example:
+    // loop: true,
+    // autoplay: {
+    //   delay: 3000,
+    // },
+  });
+}
+//* vertical stepper
+if (document.querySelectorAll(".v-step").length) {
+  // default
+  const steps = document.querySelectorAll(".v-step");
+  // ------------------------------------------------
+  steps[0].classList.add("active");
+  function goToStep(stepNumber) {
+    // Find all step elements
+    const steps = document.querySelectorAll(".v-step");
+
+    // Remove the 'active' class from all steps
+    steps.forEach((step, index) => {
+      step.classList.remove("active");
+    });
+
+    // Add the 'active' class to the clicked step
+    steps[stepNumber - 1].classList.add("active");
+  }
+}
