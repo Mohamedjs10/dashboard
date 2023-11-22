@@ -819,3 +819,13 @@ input:checked + .slider:before {
   position: relative;
   top: 140px;
 }
+.logo {
+  /*font-size: 24px;
+  color: red;
+  font-weight: bold;
+  padding: 10px 0;
+  */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}

@@ -230,37 +230,39 @@ if (document.getElementById("categories-container")) {
   });
 }
 //***
-document.addEventListener("DOMContentLoaded", (event) => {
-  new Sortable(list1, {
-    group: "shared",
-    animation: 150,
-    onEnd: function (/**Event*/ evt) {
-      var itemEl = evt.item; // dragged HTMLElement
-      console.log("Item dropped in list1:", itemEl);
-      // Additional logic for drop event
-    },
-  });
+if (typeof Sortable !== "undefined") {
+  document.addEventListener("DOMContentLoaded", (event) => {
+    new Sortable(list1, {
+      group: "shared",
+      animation: 150,
+      onEnd: function (/**Event*/ evt) {
+        var itemEl = evt.item; // dragged HTMLElement
+        console.log("Item dropped in list1:", itemEl);
+        // Additional logic for drop event
+      },
+    });
 
-  new Sortable(list2, {
-    group: "shared",
-    animation: 150,
-    onEnd: function (/**Event*/ evt) {
-      var itemEl = evt.item; // dragged HTMLElement
-      console.log("Item dropped in list2:", itemEl);
-      // Additional logic for drop event
-    },
-  });
+    new Sortable(list2, {
+      group: "shared",
+      animation: 150,
+      onEnd: function (/**Event*/ evt) {
+        var itemEl = evt.item; // dragged HTMLElement
+        console.log("Item dropped in list2:", itemEl);
+        // Additional logic for drop event
+      },
+    });
 
-  new Sortable(list3, {
-    group: "shared",
-    animation: 150,
-    onEnd: function (/**Event*/ evt) {
-      var itemEl = evt.item; // dragged HTMLElement
-      console.log("Item dropped in list3:", itemEl);
-      // Additional logic for drop event
-    },
+    new Sortable(list3, {
+      group: "shared",
+      animation: 150,
+      onEnd: function (/**Event*/ evt) {
+        var itemEl = evt.item; // dragged HTMLElement
+        console.log("Item dropped in list3:", itemEl);
+        // Additional logic for drop event
+      },
+    });
   });
-});
+}
 
 //* stepper
 if (document.getElementById("back-button")) {
@@ -468,3 +470,5 @@ if (document.querySelectorAll(".v-step").length) {
     steps[stepNumber - 1].classList.add("active");
   }
 }
+
+//
